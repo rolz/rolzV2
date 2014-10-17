@@ -1,0 +1,238 @@
+/*Fonts*/
+
+@font-face {
+	font-family: SourceSansPro-Bold;
+	src: url(../assets/fonts/source-pro-sans/SourceSansPro-Bold.ttf);
+}
+@font-face {
+	font-family: SourceSansPro-SemiBold;
+	src: url(../assets/fonts/source-pro-sans/SourceSansPro-Semibold.ttf);
+}
+@font-face {
+	font-family: SourceSansPro-SemiBoldItalic;
+	src: url(../assets/fonts/source-pro-sans/SourceSansPro-SemiboldItalic.ttf);
+}
+@font-face {
+	font-family: SourceSansPro-Regular;
+	src: url(../assets/fonts/source-pro-sans/SourceSansPro-regular.ttf);
+}
+@font-face {
+	font-family: SourceSansPro-Light;
+	src: url(../assets/fonts/source-pro-sans/SourceSansPro-Light.ttf);
+}
+
+@font-face {
+	font-family: SourceSansPro-ExtraLight;
+	src: url(../assets/fonts/source-pro-sans/SourceSansPro-ExtraLight.ttf);
+}
+/*CSS*/
+
+body {
+	display: block;
+}
+h1 {
+	margin: 0;
+ font-family: "SourceSansPro-SemiBold", Helvetica, Arial, sans-serif;
+}
+p{
+		margin: 0;
+	 font-family: "SourceSansPro-ExtraLight", Helvetica, Arial, sans-serif;
+
+}
+a {
+	margin: 0;
+	font-family: "SourceSansPro-Light", Helvetica, Arial, sans-serif;
+}
+
+img {
+	margin: 0;
+}
+.video-container {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	overflow: hidden;
+}
+.iceland {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -1000;
+	overflow: hidden;
+	background-color: transparent;
+}
+#video {
+	opacity: 0;
+}
+.container {
+	position: absolute;
+	top: 10%;
+	right: 0;
+	padding-right: 5em;
+}
+.box {
+	background: rgba(255, 255, 255, 0.5);
+	width: 100%;
+	max-width: 27em;
+	position: relative;
+	border: 1px solid #4444CC;
+}
+.box-header {
+	height: 30%;
+	background: #4444CC;
+		font-size: 	0.9em;
+		color: #fff;
+		text-align: 	right;
+}
+.box-header h1{
+		padding-top: 	0.35em;
+	padding-bottom: 	0.5em;
+		padding-right: 	0.5em;
+	line-height: 	1.2;
+}
+
+.inner-box {
+	padding: 3.5em;
+	width: 300px;
+	height: 100%;
+	color: #000;
+}
+
+.inner-box h1 {
+ 	padding-top: 	0.35em;
+		padding-bottom: 	0.5em;
+		padding-right: 	0.5em;
+	line-height: 	1.2;
+}
+
+.social-box {
+	padding: 1em 0.5em 0.5em 0.5em;
+	height: 100%;
+}
+
+.name-box {
+	display: inline-block;
+	padding-left: 1.0em;
+	padding-right: 6.5em;
+}
+
+.name-box a {
+	font-size: 	1.4em;
+	color: #4444CC;
+	text-decoration: none;
+}
+
+.social {
+		display: inline-block;
+}
+
+.social img {
+	vertical-align: bottom;
+ width: 30px;
+}
+
+.more {
+	display: block;
+	padding: 1.5em;
+	padding-left: 1.5em;
+	color: #4444CC;
+	cursor: pointer;
+	font-size: 1.0em;
+}
+#arrow {
+	-webkit-transform: rotateY(0);
+	-moz-transform: rotateY(0);
+	-o-transform: rotateY(0);
+	display: block;
+	margin-right: 2em;
+	float: left;
+	font-size: 1.0em;
+	line-height: 1.3em;
+	transition: transform 0.28s;
+	-webkit-transition: -webkit-transform 0.28s;
+	-moz-transition: -moz-transform 0.28s;
+}
+#arrow.rotated {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+#arrow:after {
+	clear: both;
+}
+#side-box {
+	position: absolute;
+	top: 0;
+	right: 100%;
+	bottom: 0;
+	background: rgba(255, 255, 255, 0.5);
+	border-right: 1px solid #4444CC;
+	border-top: 1px solid #4444CC;
+	border-bottom: 1px solid #4444CC;
+	width: 80%;
+	left: 0px;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transform: perspective(600) rotate3d(0, 1, 0, 90deg);
+	-webkit-transform: perspective(600) rotate3d(0, 1, 0, 90deg);
+	-moz-transform: perspective(600) rotate3d(0, 1, 0, 90deg);
+	transform-origin: 0 50%;
+	-webkit-transform-origin: 0 50%;
+	-moz-transform-origin: 0 50%;
+}
+#side-box.open {
+	transform: perspective(600) rotate3d(0, 1, 0, 180deg);
+	-webkit-transform: perspective(600) rotate3d(0, 1, 0, 180deg);
+	-moz-transform: perspective(600) rotate3d(0, 1, 0, 180deg);
+	-o-transform: perspective(600)rotate3d(0, 1, 0, 180deg);
+}
+#side-box.animation-complete {} .flipped {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+#side-box ul {
+	list-style: none;
+	margin: 25px 35px 0 5px;
+	padding: 0;
+}
+#side-box ul li {
+	margin: 0 0 20px 0;
+	padding: 0;
+	font-size: .9em;
+}
+@keyframes flash-text {
+	0% {
+		color: auto;
+	}
+	50% {
+		color: #444;
+	}
+	100% {
+		color: auto;
+	}
+}
+@-webkit-keyframes flash-text {
+	0% {
+		color: default;
+	}
+	50% {
+		color: #000;
+	}
+	100% {
+		color: default;
+	}
+}
+@media (max-width: 767px) {
+	.container {
+		left: 0;
+		padding-left: 5em;
+	}
+}
