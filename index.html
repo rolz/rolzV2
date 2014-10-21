@@ -8,6 +8,10 @@
   <title>Zac Rolland | Digital Data Strategist</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="author" href="humans.txt">
+
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/d3.min.js"></script>
+
 </head>
 
 <body>
@@ -16,46 +20,82 @@
     <video src="assets/iceland_river_h264.mp4" class="iceland" id="video" preload="auto" autoplay="autoplay" loop="loop" style="opacity: 0"></video>
   </div>
   <div class="container">
-    <div class="box">
-      <div class="box-header">
-        <h1>I build digital strategies and tools that solve real <br>problems</h1>
+    <div id="box">
+      <div id="box-header">
+        <h1>I develop Apps and Strategies with Creativity and </br> Passion</h1>
       </div>
-
-<!--
-						<div class="inner-box">
-
-      </div>
--->
 
       <div class="social-box">
 
-							<div class="name-box"><a href="mailto:zac.rolland@hyperisland.se?Subject=Hey%20from%rolz.io" target="_top">Zachary Rolland</a></div>
-							<div class="social">
-										<a href="https://github.com/rolz" target="_blank"><img src="assets/github_blu.png" data-virtual-view="/virtual/github"></a>
-										<a href="http://se.linkedin.com/pub/zac-rolland/38/95a/ab3/" target="_blank"><img src="assets/linkedin_blu.png" data-virtual-view="/virtual/linked-in"></a>
-										<a href="skype:zacrolz?call"><img src="assets/skype_blu.png" data-virtual-view="/virtual/skype"></a>
-										<a href="https://twitter.com/zacrolz" target="_blank"><img src="assets/twitter_blu.png" data-virtual-view="/virtual/twitter"></a>
+              <div class="name-box"><a href="mailto:zac.rolland@hyperisland.se?Subject=Hey%20from%rolz.io" target="_top">Zachary Rolland</a></div>
+              <div class="social">
+                    <a href="https://github.com/rolz" target="_blank"><img src="assets/github_blu.png" data-virtual-view="/virtual/github"></a>
+                    <a href="http://se.linkedin.com/pub/zac-rolland/38/95a/ab3/" target="_blank"><img src="assets/linkedin_blu.png" data-virtual-view="/virtual/linked-in"></a>
+                    <a href="skype:zacrolz?call"><img src="assets/skype_blu.png" data-virtual-view="/virtual/skype"></a>
+                    <a href="https://twitter.com/zacrolz" target="_blank"><img src="assets/twitter_blu.png" data-virtual-view="/virtual/twitter"></a>
         </div>
       </div>
 
 
 
-					<a class="more" id="more-link" onclick="toggleDrawer();">
+          <a class="more" id="more-link" onclick="openContent();">
         <span id="arrow" class="">▶</span>
         Check out some of the things I like to do!
       </a>
 
 
     </div>
-    <div id="side-box">
+    <!-- <div id="side-box">
       <div class="inner-box flipped">
         <ul>
             <li>Hello</li>
         </ul>
       </div>
-    </div>
+    </div> -->
   </div>
+
+  <div id="hidden-container">
+    <!--borders-->
+    <div id="left"></div>
+    <div id="right"></div>
+    <div id="top"></div>
+    <div id="bottom"></div>
+    <!--borders-->
+
+    <div id="hidden-content">
+
+      <div class="link-box">
+        <div class="link"><a href="">Creating a dynamic dashboard for Heat (Advertising not Basketball).</a></div>
+      </div>
+
+      <div class="link-box">
+        <div class="link"><a href="">Drinking for free in bars with Barpass.</a></div>
+      </div>
+
+      <div class="link-box">
+        <div class="link"><a href="">Helping college kids find jobs with Jobbook.</a></div>
+      </div>
+
+      <div class="link-box">
+        <div class="link"><a href="">Visualizing sex data with Screw Sweden.</a></div>
+      </div>
+
+      <div class="link-box">
+        <div class="link"><a href="">Finding a place to take a break in Stockholm with Breathr.</a></div>
+      </div>
+
+
+    </div>
+
+      <!--Chart Bonus for Big Screens-->
+      <!-- <div id="viewport"></div> -->
+
+  </div>
+
+
+  <script src="js/easing.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/chart.js"></script>
 </body>
 
 </html>
