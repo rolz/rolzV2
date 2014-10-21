@@ -265,9 +265,8 @@ img {
 #hidden-content {
 	position: absolute;
 	max-width: 50em;
-	/*min-width: 27em;*/
 	top: 10%;
-	left: 5em;
+	margin-left: 5em;
 	z-index: 2;
 }
 
