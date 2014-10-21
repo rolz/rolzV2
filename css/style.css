@@ -25,6 +25,17 @@
 	font-family: SourceSansPro-ExtraLight;
 	src: url(../assets/fonts/source-pro-sans/SourceSansPro-ExtraLight.ttf);
 }
+
+@font-face {
+	font-family: Montserrat-Regular;
+	src: url(../assets/fonts/montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+	font-family: Montserrat-Bold;
+	src: url(../assets/fonts/montserrat/Montserrat-Bold.ttf);
+}
+
 /*CSS*/
 
 body {
@@ -76,38 +87,32 @@ img {
 	right: 0;
 	padding-right: 5em;
 }
-.box {
-	background: rgba(255, 255, 255, 0.5);
-	width: 100%;
-	max-width: 27em;
+#box {
 	position: relative;
+	background: rgba(255, 255, 255, 0.5);
+	width: 27em;
 	border: 1px solid #4444CC;
+	transition: 0.8s ease-out;
+	z-index:2;
 }
-.box-header {
+
+#box.open {
+	background: rgba(255, 255, 255, 1);
+	border: 1px solid #fff;
+	transition: 0.8s ease-in;
+}
+
+#box-header {
 	height: 30%;
 	background: #4444CC;
-		font-size: 	0.9em;
-		color: #fff;
-		text-align: 	right;
+	font-size: 	0.9em;
+	color: #fff;
+	text-align: right;
 }
-.box-header h1{
-		padding-top: 	0.35em;
+#box-header h1{
+	padding-top: 	0.35em;
 	padding-bottom: 	0.5em;
-		padding-right: 	0.5em;
-	line-height: 	1.2;
-}
-
-.inner-box {
-	padding: 3.5em;
-	width: 300px;
-	height: 100%;
-	color: #000;
-}
-
-.inner-box h1 {
- 	padding-top: 	0.35em;
-		padding-bottom: 	0.5em;
-		padding-right: 	0.5em;
+	padding-right: 	0.5em;
 	line-height: 	1.2;
 }
 
@@ -134,7 +139,7 @@ img {
 
 .social img {
 	vertical-align: bottom;
- width: 30px;
+ 	width: 30px;
 }
 
 .more {
@@ -167,37 +172,44 @@ img {
 	clear: both;
 }
 #side-box {
-	position: absolute;
-	top: 0;
-	right: 100%;
-	bottom: 0;
+	position: relative;
+	width: 100%;
+	max-width: 27em;
+	top: -250px;
 	background: rgba(255, 255, 255, 0.5);
 	border-right: 1px solid #4444CC;
+	border-left: 1px solid #4444CC;
 	border-top: 1px solid #4444CC;
-	border-bottom: 1px solid #4444CC;
-	width: 80%;
-	left: 0px;
-	transition: all 0.5s;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	transform: perspective(600) rotate3d(0, 1, 0, 90deg);
-	-webkit-transform: perspective(600) rotate3d(0, 1, 0, 90deg);
-	-moz-transform: perspective(600) rotate3d(0, 1, 0, 90deg);
-	transform-origin: 0 50%;
-	-webkit-transform-origin: 0 50%;
-	-moz-transform-origin: 0 50%;
+	/*transition: all 0.8s;
+	-webkit-transition: all 0.8s;
+	-moz-transition: all 0.8s;
+	-o-transition: all 0.8s;*/
+	/*transform: perspective(600) rotateX(0deg);
+	-webkit-transform: perspective(600) rotateX(00deg);
+	-moz-transform: perspective(600) rotateX(0deg);
+	-o-transform: perspective(600) rotateX(0deg);
+	transform-origin: bottom center;
+	-moz-transform-origin: bottom center;
+	-o-transform-origin: bottom center;
+	-ms-transform-origin: bottom center;*/
+	z-index:1;
 }
+
 #side-box.open {
-	transform: perspective(600) rotate3d(0, 1, 0, 180deg);
-	-webkit-transform: perspective(600) rotate3d(0, 1, 0, 180deg);
-	-moz-transform: perspective(600) rotate3d(0, 1, 0, 180deg);
-	-o-transform: perspective(600)rotate3d(0, 1, 0, 180deg);
+	/*transform: perspective(600) rotateX(180deg);
+	-webkit-transform: perspective(600) rotateX(180deg);
+	-moz-transform: perspective(600) rotateX(180deg);
+	-o-transform: perspective(600) rotateX(180deg);*/
+	z-index:3;
 }
+
 #side-box.animation-complete {} .flipped {
-	-webkit-transform: rotateY(180deg);
-	-moz-transform: rotateY(180deg);
-	transform: rotateY(180deg);
+	/*transform: perspective(600) rotateX(180deg);
+	-webkit-transform: perspective(600) rotateX(180deg);
+	-moz-transform: perspective(600) rotateX(180deg);
+	-o-transform: perspective(600) rotateX(180deg);*/
 }
+
 #side-box ul {
 	list-style: none;
 	margin: 25px 35px 0 5px;
@@ -208,31 +220,148 @@ img {
 	padding: 0;
 	font-size: .9em;
 }
-@keyframes flash-text {
-	0% {
-		color: auto;
-	}
-	50% {
-		color: #444;
-	}
-	100% {
-		color: auto;
-	}
+
+/*hidden container*/
+#hidden-container {
+  display:initial;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 100%;
+	left: 0px;
+	overflow: auto;
+	opacity: 0;
+	background-color: #4444CC;
+  transition: 0.8s ease-out;
 }
-@-webkit-keyframes flash-text {
-	0% {
-		color: default;
-	}
-	50% {
-		color: #000;
-	}
-	100% {
-		color: default;
-	}
+
+#hidden-container.open {
+	top:0%;
+	opacity: 1;
+	transition: 0.8s ease-in;
 }
+
+#top, #bottom, #left, #right {
+	background: #fff;
+	position: absolute;
+	}
+#left, #right {
+	top: 0; bottom: 0;
+	width: 15px;
+}
+
+#left { left: 0; }
+#right { right: 0; }
+
+#top, #bottom {
+	left: 0; right: 0;
+	height: 15px;
+}
+
+#top { top: 0; }
+#bottom { bottom: 0; }
+
+#hidden-content {
+	position: absolute;
+	max-width: 50em;
+	min-width: 27em;
+	top: 10%;
+	left: 5em;
+	z-index: 2;
+}
+
+.link-box {
+	position: relative;
+	padding-bottom: 3em;
+	/*max-width: 50em;*/
+}
+
+.link {
+	font-family: "SourceSansPro-Bold", Helvetica, Arial, sans-serif;
+	color: #fff;
+	font-size: 42px;
+	text-decoration: none;
+	transition: 0.2s ease-out;
+}
+
+.link > a {
+	position: relative;
+	font-family: "SourceSansPro-Bold", Helvetica, Arial, sans-serif;
+	color: #fff;
+	font-size: 42px;
+	text-decoration: none;
+	transition: 0.2s ease-in;
+}
+
+.link > a:hover {
+	color: #D93D5C;
+	transition: 0.2s ease-in;
+}
+
+.link > a:before {
+	content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #D93D5C;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.link > a:hover:before {
+	visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+/* canvas stuff */
+
+#viewport {
+	position: absolute;
+	margin: 0;
+  bottom: 5%;
+	z-index:1;
+}
+
+#visualization {
+	margin: 0px;
+}
+
 @media (max-width: 767px) {
 	.container {
+		top:0;
 		left: 0;
-		padding-left: 5em;
+		padding-right: 0em;
+		padding-left: 0em;
+	}
+
+	#box {
+		width: 100%;
+	}
+
+	.social-box {
+		padding: 0;
+		padding-top: 1em;
+		right: 10px;
+	}
+
+	.name-box {
+		padding-left: 1.0em;
+		padding-right: 0em;
+	}
+
+	.social {
+			float: right;
+			padding-right: 1em;
+	}
+
+	#hidden-content {
+		margin-top: 12em;
+		left: 2em;
 	}
 }
