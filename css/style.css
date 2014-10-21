@@ -264,7 +264,7 @@ img {
 #hidden-content {
 	position: absolute;
 	max-width: 50em;
-	min-width: 27em;
+	/*min-width: 27em;*/
 	top: 10%;
 	left: 5em;
 	z-index: 2;
@@ -361,7 +361,11 @@ img {
 	}
 
 	#hidden-content {
-		margin-top: 12em;
-		left: 2em;
+		margin-top: 13em;
+		left: 1em;
+	}
+
+	#left, #right, #top, #bottom {
+		display: none;
 	}
 }
