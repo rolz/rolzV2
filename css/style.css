@@ -376,7 +376,7 @@ img {
 	#hidden-content {
 		position: relative;
 		padding-top: 1em;
-		left: 1em;
+		margin-left: 1em;
 	}
 
 	#left, #right, #top, #bottom {
